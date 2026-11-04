@@ -168,4 +168,18 @@ class InvoiceServiceTest {
 
         assertEquals(expected.toString(), headerInvoice.toString());
     }
+
+    @Test
+    void shouldGetOnlyInvoiceLinesData() {
+        StringBuilder linesInvoice = InvoiceFormatPrinter.getFormatLines(invoice);
+        String lineSeparator = System.lineSeparator();
+        StringBuilder expected = new StringBuilder();
+
+        expected.append("Mechanical keyboard - 2 x 50.00 = 100.00").append(lineSeparator);
+        expected.append("Wireless mouse - 1 x 25.00 = 25.00").append(lineSeparator);
+        expected.append(lineSeparator);
+        expected.append("TOTAL: 125.00");
+
+        assertEquals(expected.toString(), linesInvoice.toString());
+    }
 }
