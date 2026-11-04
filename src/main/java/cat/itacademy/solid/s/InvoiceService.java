@@ -9,13 +9,9 @@ import java.nio.file.Path;
 public class InvoiceService {
 
     public void saveToFile(Invoice invoice, Path destination) {
-        String lineSeparator = System.lineSeparator();
-        StringBuilder text = new StringBuilder();
-        text.append("INVOICE").append(lineSeparator);
-        text.append("Number: ").append(invoice.number()).append(lineSeparator);
-        text.append("Customer: ").append(invoice.customerName()).append(lineSeparator);
-        text.append(lineSeparator);
+        StringBuilder text = InvoiceFormatPrinter.getFormatHeader(invoice);
 
+        String lineSeparator = System.lineSeparator();
         BigDecimal total = new BigDecimal("0.00");
         for (InvoiceLine line : invoice.lines()) {
             BigDecimal lineTotal = line.unitPrice()
