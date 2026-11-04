@@ -182,4 +182,23 @@ class InvoiceServiceTest {
 
         assertEquals(expected.toString(), linesInvoice.toString());
     }
+
+    @Test
+    void shouldGetOnlyInvoiceLinesTotalAmount() {
+        InvoiceLine invoiceLine1 = invoice.lines().get(0);
+        InvoiceLine invoiceLine2 = invoice.lines().get(1);
+
+        BigDecimal totalAmountOfInvoiceLine1 = InvoiceCalculator.totalAmountOfLine(invoiceLine1.unitPrice(), invoiceLine1.quantity());
+        BigDecimal totalAmountOfInvoiceLine2 = InvoiceCalculator.totalAmountOfLine(invoiceLine2.unitPrice(), invoiceLine2.quantity());
+
+        assertEquals("100.00", totalAmountOfInvoiceLine1.toString());
+        assertEquals("25.00", totalAmountOfInvoiceLine2.toString());
+    }
+
+    @Test
+    void shouldGetOnlyInvoiceTotalAmount() {
+        BigDecimal totalAmountOfInvoice = InvoiceCalculator.totalAmountOfInvoice(invoice);
+
+        assertEquals("125.00", totalAmountOfInvoice.toString());
+    }
 }
