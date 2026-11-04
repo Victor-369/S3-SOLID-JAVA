@@ -19,20 +19,17 @@ public class InvoiceFormatPrinter {
     public static StringBuilder getFormatLines(Invoice invoice) {
         String lineSeparator = System.lineSeparator();
         StringBuilder text = new StringBuilder();
-        BigDecimal total = new BigDecimal("0.00");
         for (InvoiceLine line : invoice.lines()) {
-            BigDecimal lineTotal = line.unitPrice()
-                    .multiply(BigDecimal.valueOf(line.quantity()));
-            total = total.add(lineTotal);
-
+            BigDecimal totalAmountOfInvoiceLine = InvoiceCalculator.totalAmountOfLine(line.unitPrice(), line.quantity());
             text.append(line.description())
                     .append(" - ").append(line.quantity())
                     .append(" x ").append(line.unitPrice())
-                    .append(" = ").append(lineTotal)
+                    .append(" = ").append(totalAmountOfInvoiceLine)
                     .append(lineSeparator);
         }
 
-        text.append(lineSeparator).append("TOTAL: ").append(total);
+        BigDecimal totalAmountOfInvoice = InvoiceCalculator.totalAmountOfInvoice(invoice);
+        text.append(lineSeparator).append("TOTAL: ").append(totalAmountOfInvoice);
 
         return text;
     }
