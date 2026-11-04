@@ -154,4 +154,18 @@ class InvoiceServiceTest {
 
         assertEquals(expected, Files.readString(destination));
     }
+
+    @Test
+    void shouldGetOnlyInvoiceHeaderData() {
+        StringBuilder headerInvoice = InvoiceFormatPrinter.getFormatHeader(invoice);
+        String lineSeparator = System.lineSeparator();
+        StringBuilder expected = new StringBuilder();
+
+        expected.append("INVOICE").append(lineSeparator);
+        expected.append("Number: INV-2026-001").append(lineSeparator);
+        expected.append("Customer: Ada Lovelace").append(lineSeparator);
+        expected.append(System.lineSeparator());
+
+        assertEquals(expected.toString(), headerInvoice.toString());
+    }
 }
