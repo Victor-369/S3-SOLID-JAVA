@@ -9,26 +9,14 @@ import java.nio.file.Path;
 public class InvoiceService {
 
     public void saveToFile(Invoice invoice, Path destination) {
-        StringBuilder text = InvoiceFormatPrinter.getFormatHeader(invoice);
-
-        String lineSeparator = System.lineSeparator();
-        BigDecimal total = new BigDecimal("0.00");
-        for (InvoiceLine line : invoice.lines()) {
-            BigDecimal lineTotal = line.unitPrice()
-                    .multiply(BigDecimal.valueOf(line.quantity()));
-            total = total.add(lineTotal);
-
-            text.append(line.description())
-                    .append(" - ").append(line.quantity())
-                    .append(" x ").append(line.unitPrice())
-                    .append(" = ").append(lineTotal)
-                    .append(lineSeparator);
-        }
-
-        text.append(lineSeparator).append("TOTAL: ").append(total);
+        StringBuilder invoiceHeaderFormatted = InvoiceFormatPrinter.getFormatHeader(invoice);
+        StringBuilder invoiceLinesFormatted = InvoiceFormatPrinter.getFormatLines(invoice);
+        StringBuilder invoiceFullFormatted = new StringBuilder();
+        invoiceFullFormatted.append(invoiceHeaderFormatted);
+        invoiceFullFormatted.append(invoiceLinesFormatted);
 
         try {
-            Files.writeString(destination, text.toString());
+            Files.writeString(destination, invoiceFullFormatted.toString());
         } catch (IOException exception) {
             throw new UncheckedIOException(
                     "Could not save invoice: " + invoice.number(),
