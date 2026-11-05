@@ -1,5 +1,6 @@
 package cat.itacademy.solid.d.repository;
 
+import cat.itacademy.solid.d.interfaces.BookingInterface;
 import cat.itacademy.solid.d.model.Booking;
 
 import java.util.Comparator;
@@ -8,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public class InMemoryBookingRepository {
+public class InMemoryBookingRepository implements BookingInterface {
 
     private final Map<Long, Booking> bookings = new HashMap<>();
     private long nextId = 1;

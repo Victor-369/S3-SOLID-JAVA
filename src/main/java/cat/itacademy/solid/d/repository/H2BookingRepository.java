@@ -1,5 +1,6 @@
 package cat.itacademy.solid.d.repository;
 
+import cat.itacademy.solid.d.interfaces.BookingInterface;
 import cat.itacademy.solid.d.model.Booking;
 import cat.itacademy.solid.d.model.BookingStatus;
 
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class H2BookingRepository implements AutoCloseable {
+public class H2BookingRepository implements AutoCloseable, BookingInterface {
 
     // Una única conexió oberta: una base H2 en memòria desapareix quan es tanca l'última connexió.
     private final Connection connection;
