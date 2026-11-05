@@ -1,16 +1,16 @@
 package cat.itacademy.solid.d.service;
 
 import cat.itacademy.solid.d.exception.BookingAccessDeniedException;
+import cat.itacademy.solid.d.interfaces.BookingInterface;
 import cat.itacademy.solid.d.model.Booking;
-import cat.itacademy.solid.d.repository.H2BookingRepository;
 
 import java.time.LocalDateTime;
 
 public class BookingService {
 
-    private final H2BookingRepository repository;
+    private final BookingInterface repository;
 
-    public BookingService(H2BookingRepository repository) {
+    public BookingService(BookingInterface repository) {
         this.repository = repository;
     }
 
