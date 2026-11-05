@@ -1,6 +1,6 @@
 # 🧱 S - Principi de Responsabilitat Única (SRP)
 
-Aquest document conté una introducció a l'SRP. L'exercici de facturació i les instruccions per executar-lo són al [nou enunciat de la S](../../src/main/java/cat/itacademy/solid/s/README.md).
+Aquest document conté una introducció a l'SRP. L'exercici de facturació i les instruccions per executar-lo són al [nou enunciat de la S](../../../../../../main/java/cat/itacademy/solid/s/README.md).
 
 ## 🧠 Què és?
 

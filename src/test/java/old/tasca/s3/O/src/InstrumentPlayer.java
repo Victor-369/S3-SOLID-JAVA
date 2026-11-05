@@ -1,3 +1,5 @@
+package old.tasca.s3.O.src;
+
 public class InstrumentPlayer {
     public void play(String instrument) {
         if ("guitar".equals(instrument)) {

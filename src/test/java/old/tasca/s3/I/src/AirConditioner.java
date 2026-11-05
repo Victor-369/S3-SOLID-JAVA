@@ -1,3 +1,5 @@
+package old.tasca.s3.I.src;
+
 public class AirConditioner implements MachineActions {
 
     @Override

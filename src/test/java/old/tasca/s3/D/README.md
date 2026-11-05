@@ -1,6 +1,6 @@
 # 🧲 D - Principi d’Inversió de Dependències (DIP)
 
-Aquest document conté una introducció al DIP. L'activitat actual de reserves i les instruccions per executar-la són al [nou enunciat de la D](../../src/main/java/cat/itacademy/solid/d/README.md).
+Aquest document conté una introducció al DIP. L'activitat actual de reserves i les instruccions per executar-la són al [nou enunciat de la D](../../../../../../main/java/cat/itacademy/solid/d/README.md).
 
 ## 🧠 Què és?
 
@@ -104,7 +104,7 @@ public class Main {
 
 ## 🎯 Objectiu de l’exercici
 
-A l'[activitat de reserves](../../src/main/java/cat/itacademy/solid/d/README.md) trobaràs un cas d'ús que depèn directament d'una persistència concreta.
+A l'[activitat de reserves](../../../../../../main/java/cat/itacademy/solid/d/README.md) trobaràs un cas d'ús que depèn directament d'una persistència concreta.
 
 🔧 El teu repte és:
 

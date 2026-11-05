@@ -1,3 +1,5 @@
+package old.tasca.s3.L.src;
+
 public class Character {
     public void attack() {
         System.out.println("The character attacks with a weapon.");

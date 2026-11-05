@@ -1,3 +1,5 @@
+package old.tasca.s3.L.src;
+
 public class Warrior extends Character {
     @Override
     public void attack() {
