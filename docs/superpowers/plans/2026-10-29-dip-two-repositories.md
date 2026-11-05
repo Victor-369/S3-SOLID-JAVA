@@ -34,7 +34,7 @@
 - Create: `src/main/java/cat/itacademy/solid/d/repository/InMemoryBookingRepository.java`.
 - Test: `src/test/java/cat/itacademy/solid/d/repository/InMemoryBookingRepositoryTest.java`.
 - Modify: `src/main/java/cat/itacademy/solid/d/BookingApp.java`, els README general i de la D, la guia docent i `pom.xml`.
-- Remove: les tres classes de l'exercici antic a `Tasca-S3-0/D/src/`; enllaçar el README antic al nou enunciat.
+- Remove: les tres classes de l'exercici antic a `../../../src/test/java/old/tasca/s3/D`; enllaçar el README antic al nou enunciat.
 
 **Interfaces:** `Booking save(Booking booking)`, `Optional<Booking> findById(Long id)` i `List<Booking> findAllOrderedByStart()`; cap tipus comú de producció.
 
