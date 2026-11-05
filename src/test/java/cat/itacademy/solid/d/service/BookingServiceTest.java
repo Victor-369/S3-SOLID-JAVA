@@ -4,33 +4,24 @@ import cat.itacademy.solid.d.exception.BookingAccessDeniedException;
 import cat.itacademy.solid.d.exception.CancellationPeriodExpiredException;
 import cat.itacademy.solid.d.model.Booking;
 import cat.itacademy.solid.d.model.BookingStatus;
-import cat.itacademy.solid.d.repository.H2BookingRepository;
-import org.junit.jupiter.api.AfterEach;
+import cat.itacademy.solid.d.repository.InMemoryBookingRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class BookingServiceTest {
 
-    private H2BookingRepository repository;
+    private InMemoryBookingRepository repository;
     private BookingService service;
 
     @BeforeEach
     void setUp() {
-        repository = new H2BookingRepository(
-                "jdbc:h2:mem:" + UUID.randomUUID()
-        );
+        repository = new InMemoryBookingRepository();
         service = new BookingService(repository);
-    }
-
-    @AfterEach
-    void tearDown() {
-        repository.close();
     }
 
     @Test
