@@ -1,6 +1,9 @@
 package old.tasca.s3.I.src;
 
-public class AirConditioner implements MachineActions {
+import old.tasca.s3.I.src.interfaces.AirConditionerActions;
+import old.tasca.s3.I.src.interfaces.MachineBasicActions;
+
+public class AirConditioner implements MachineBasicActions, AirConditionerActions {
 
     @Override
     public void turnOn() {
@@ -20,11 +23,6 @@ public class AirConditioner implements MachineActions {
     @Override
     public void cool() {
         System.out.println("AirConditioner is cooling.");
-    }
-
-    @Override
-    public void wash() {
-        System.out.println("Wash operation not supported by AirConditioner.");
     }
 }
 

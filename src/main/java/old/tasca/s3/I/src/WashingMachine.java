@@ -1,6 +1,9 @@
 package old.tasca.s3.I.src;
 
-public class WashingMachine implements MachineActions {
+import old.tasca.s3.I.src.interfaces.MachineBasicActions;
+import old.tasca.s3.I.src.interfaces.WashingMachineActions;
+
+public class WashingMachine implements MachineBasicActions, WashingMachineActions {
 
     @Override
     public void turnOn() {
@@ -10,16 +13,6 @@ public class WashingMachine implements MachineActions {
     @Override
     public void turnOff() {
         System.out.println("WashingMachine is OFF");
-    }
-
-    @Override
-    public void heat() {
-        System.out.println("Heat operation does not apply to WashingMachine.");
-    }
-
-    @Override
-    public void cool() {
-        System.out.println("Cool operation does not apply to WashingMachine.");
     }
 
     @Override
